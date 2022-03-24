@@ -1,7 +1,17 @@
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
   return (
     <>
-      <h1>HI</h1>
+      <div>
+        <h1>Fitness Tracker</h1>
+        <div>
+          <Link to="/">Hello</Link>
+          <Link to="/Routines">Routines</Link>
+          <Link to="/Activities">Activities</Link>
+          <Link to="/Login">Login/Register</Link>
+        </div>
+      </div>
     </>
   );
 };
