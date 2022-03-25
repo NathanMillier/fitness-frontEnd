@@ -29,7 +29,20 @@ const App = () => {
 
           <Route exact element={<Activities />} path="/Activities" />
 
-          <Route exact element={<Login />} path="/Login" />
+          <Route
+            exact
+            element={
+              <Login
+                token={token}
+                setToken={setToken}
+                username={username}
+                setUsername={setUsername}
+                password={password}
+                setPassword={setPassword}
+              />
+            }
+            path="/Login"
+          />
 
           <Route
             exact
