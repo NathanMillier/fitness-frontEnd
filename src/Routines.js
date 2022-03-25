@@ -1,29 +1,14 @@
 import React, { useState, useEffect } from "react";
-
-const Routines = () => {
-  const [routines, setRoutines] = useState([]);
-
-  const fetchRoutine = async () => {
-    const routines = await fetch(
-      "http://fitnesstrac-kr.herokuapp.com/api/routines",
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
-    const info = await routines.json();
-    console.log(info);
-    setRoutines(info);
-  };
-
-  useEffect(() => {
-    fetchRoutine();
-  }, []);
-
+import { Link } from "react-router-dom";
+const Routines = ({ token, user, routines }) => {
   return (
     <>
       <h1>Routines</h1>
+      {user ? (
+        <Link to="/MyRoutines">See My Routines</Link>
+      ) : (
+        "Login to see my routines"
+      )}
       <div>
         {routines.map((routine) => {
           if (routine.isPublic) {
