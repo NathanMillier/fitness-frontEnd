@@ -1,4 +1,11 @@
-const Login = () => {
+const Login = ({
+  username,
+  setusername,
+  password,
+  setPassword,
+  token,
+  setToken,
+}) => {
   return (
     <>
       <h1>Login</h1>
