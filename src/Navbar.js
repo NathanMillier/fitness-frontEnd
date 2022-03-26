@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ user, setToken, setUser }) => {
   return (
     <>
       <div>
@@ -9,7 +9,25 @@ const Navbar = () => {
           <Link to="/">Hello</Link>
           <Link to="/Routines">Routines</Link>
           <Link to="/Activities">Activities</Link>
-          <Link to="/Register">Login/Register</Link>
+          {user ? (
+            <>
+              <Link to="/MyRoutines">My Routines</Link>
+              <Link
+                onClick={() => {
+                  setToken("");
+                  setUser(null);
+                  localStorage.removeItem("token");
+                }}
+                to="/"
+              >
+                Logout
+              </Link>
+            </>
+          ) : (
+            <>
+              <Link to="/Register">Login/Register</Link>
+            </>
+          )}
         </div>
       </div>
     </>

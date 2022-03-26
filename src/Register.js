@@ -1,6 +1,5 @@
-import { createBrowserHistory } from "history";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { url } from "./App";
 
 const Register = ({
@@ -12,9 +11,10 @@ const Register = ({
   setPassword,
   confirm,
   setConfirm,
+  error,
+  setError,
 }) => {
-  const [error, setError] = useState("");
-  const history = createBrowserHistory();
+  const history = useNavigate();
 
   const handleRegister = async (event) => {
     event.preventDefault();
@@ -37,13 +37,13 @@ const Register = ({
     });
 
     const data = await response.json();
-
+    console.log(data);
     if (data.error) {
       return setError(data.error.message);
     }
     setToken(data.token);
     localStorage.setItem("token", data.token);
-    history.push("/MyRoutines");
+    history("/MyRoutines");
   };
 
   return (

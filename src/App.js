@@ -16,6 +16,7 @@ const App = () => {
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
   const [routines, setRoutines] = useState([]);
+  const [error, setError] = useState("");
 
   const fetchRoutine = async () => {
     const routines = await fetch(
@@ -45,6 +46,7 @@ const App = () => {
       }
     );
     const info = await resp.json();
+    console.log(info);
     console.log("user fetched");
     setUser(info);
   };
@@ -56,10 +58,10 @@ const App = () => {
 
   return (
     <div id="container">
-      <Navbar />
+      <Navbar user={user} setUser={setUser} setError={setToken} />
       <div id="main-section">
         <Routes>
-          <Route exact element={<Home />} path="/" />
+          <Route exact element={<Home user={user} />} path="/" />
 
           <Route
             exact
@@ -87,6 +89,8 @@ const App = () => {
                 setUsername={setUsername}
                 password={password}
                 setPassword={setPassword}
+                error={error}
+                setError={setError}
               />
             }
             path="/Login"
@@ -104,6 +108,8 @@ const App = () => {
                 setPassword={setPassword}
                 confirm={confirm}
                 setConfirm={setConfirm}
+                error={error}
+                setError={setError}
               />
             }
             path="/Register"
