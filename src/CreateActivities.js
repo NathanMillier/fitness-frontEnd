@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 const MyRoutines = ({ token, activities, user }) => {
   const [name, setName] = useState("");
-  const [goal, setGoal] = useState("");
+  const [description, setDescription] = useState("");
 
   const handleCreateActivity = async (e) => {
     e.preventDefault();
