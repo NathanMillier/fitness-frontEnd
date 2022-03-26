@@ -1,7 +1,7 @@
 const Routines = () => {
   return (
     <>
-      <h1>Routines</h1>
+      <h2>Routines</h2>
     </>
   );
 };
