@@ -8,6 +8,8 @@ import MyRoutines from "./MyRoutines";
 import Routines from "./Routines";
 import Navbar from "./Navbar";
 
+export const APIURL = "http://fitnesstrac-kr.herokuapp.com/api";
+
 const App = () => {
   const [token, setToken] = useState("");
 
