@@ -7,6 +7,7 @@ import Register from "./Register";
 import MyRoutines from "./MyRoutines";
 import Routines from "./Routines";
 import Navbar from "./Navbar";
+import UpdateRoutine from "./UpdateRoutine";
 export const url = "https://fitnesstrac-kr.herokuapp.com/api";
 
 export const APIURL = "http://fitnesstrac-kr.herokuapp.com/api";
@@ -130,6 +131,11 @@ const App = () => {
               />
             }
             path="/Register"
+          />
+          <Route
+            exact
+            element={<UpdateRoutine user={user} routines={routines} />}
+            path="/UpdateRoutine"
           />
         </Routes>
       </div>
