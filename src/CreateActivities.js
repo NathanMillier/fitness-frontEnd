@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const MyRoutines = ({ token, routines, user }) => {
+const MyRoutines = ({ token, activities, user }) => {
   const [name, setName] = useState("");
   const [goal, setGoal] = useState("");
 
@@ -18,7 +18,6 @@ const MyRoutines = ({ token, routines, user }) => {
         body: JSON.stringify({
           name: name,
           description: description,
-          isPublic: true,
         }),
       }
     );
@@ -39,8 +38,8 @@ const MyRoutines = ({ token, routines, user }) => {
 
           <input
             placeholder="Enter description"
-            value={goal}
-            onChange={(e) => setGoal(e.target.value)}
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
           />
           <button type="submit">Submit Activity</button>
         </form>
@@ -52,14 +51,13 @@ const MyRoutines = ({ token, routines, user }) => {
             return (
               <div key={actvities.id}>
                 <h1>{actvities.name}:</h1>
-                <h4>Description: {actvities.description}</h4>
+                <h3>Description: {actvities.description}</h3>
                 <h4>Creator: {activities.creatorName}</h4>
                 {routine.activities.map((activities) => {
                   return (
                     <div key={activity.id}>
                       <h3>Activity: {activity.name}</h3>
-                      <h4>Decription: {activity.duration}</h4>
-                      <h4>Count: {activity.count}</h4>
+                      <h4>Description: {activity.description}</h4>
                     </div>
                   );
                 })}
