@@ -5,7 +5,7 @@ const Activities = ({ token, user, activities }) => {
   console.log(activities);
   return (
     <>
-      <h1>Activities</h1>
+      <h2>Activities</h2>
       {user ? (
         <Link to="/CreateActivities">Create new activity</Link>
       ) : (

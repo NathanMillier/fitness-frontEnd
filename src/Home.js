@@ -1,8 +1,7 @@
 const Home = ({ user }) => {
   return (
-    
     <>
-      <h1>Home</h1>
+      <h2>Home</h2>
       {user ? (
         <span>Welcome {user.username}</span>
       ) : (
