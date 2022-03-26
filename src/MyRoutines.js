@@ -35,12 +35,7 @@ const MyRoutines = ({ token, routines, user }) => {
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-
-          <input
-            placeholder="Enter goal"
-            value={goal}
-            onChange={(e) => setGoal(e.target.value)}
-          />
+          UpdateRoutine
           <button type="submit">Submit Routine</button>
         </form>
       </div>
