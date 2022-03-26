@@ -1,43 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-const Activities = () => {
-  
-  const deleteActivity = async (ACTIVITY_ID) => {
-    const filteredArray = activities.filter((item) => item.id !== `${ACTIVITY_ID}`);
-    setActivities(filteredArray);
-    try {
-      const resp= await fetch (`${APIURL}/activities/${POST_ID}`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        }
-
-      })
-
-    }
-  }
-  
-  
-  
-  
-  
-  
-  
+const Activities = ({ token, user, activities }) => {
   return (
     <>
       <h1>Activities</h1>
+      {user ? (
+        <Link to="/CreateActivities">Create new activity</Link>
+      ) : (
+        "Login to create activities"
+      )}
 
-      <div className="activitesHeader">
-        <h1>Activites</h1>
-      </div>
-      <div className="activitesSubHead">
-        <Link to="/newactivites">Create New Activity?</Link>
-        <input
-          placeholder="What cha lookin for?..."
-          value={""}
-          onChange={(e) => setUsername(e.target.value)}
-        />
+      <div>
+        {activities.map((activities) => {
+          if (activities.isPublic) {
+            return (
+              <div key={activities.id}>
+                <h1>{activities.name}:</h1>
+                <h3>Description {activities.description}</h3>
+
+                {routine.activities.map((activity) => {
+                  return (
+                    <div key={activity.id}>
+                      <h3>Activity: {activity.name}</h3>
+                      <h4>Duration: {activity.duration}</h4>
+                      <h4>Count: {activity.count}</h4>
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          }
+        })}
       </div>
     </>
   );

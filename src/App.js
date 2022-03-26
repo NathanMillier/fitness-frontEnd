@@ -51,9 +51,24 @@ const App = () => {
     setUser(info);
   };
 
+  const fetchActivities = async () => {
+    const routines = await fetch(
+      "http://fitnesstrac-kr.herokuapp.com/api/activities",
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    const info = await routines.json();
+    setActivites(info);
+    console.log("activities fetched");
+  };
+
   useEffect(() => {
     fetchUser();
     fetchRoutine();
+    fetchActivities();
   }, [token]);
 
   return (
@@ -77,7 +92,11 @@ const App = () => {
             path="/MyRoutines"
           />
 
-          <Route exact element={<Activities />} path="/Activities" />
+          <Route
+            exact
+            element={<Activities user={user} activities={activites} />}
+            path="/Activities"
+          />
 
           <Route
             exact
