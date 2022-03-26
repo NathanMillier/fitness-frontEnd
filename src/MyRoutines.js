@@ -35,12 +35,7 @@ const MyRoutines = ({ token, routines, user }) => {
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-
-          <input
-            placeholder="Enter goal"
-            value={goal}
-            onChange={(e) => setGoal(e.target.value)}
-          />
+          UpdateRoutine
           <button type="submit">Submit Routine</button>
         </form>
       </div>
@@ -49,19 +44,21 @@ const MyRoutines = ({ token, routines, user }) => {
         {routines.map((routine) => {
           if (routine.creatorId == user.id) {
             return (
-              <div key={routine.id}>
-                <h1>{routine.name}:</h1>
-                <h4>Goal: {routine.goal}</h4>
-                <h4>Creator: {routine.creatorName}</h4>
-                {routine.activities.map((activity) => {
-                  return (
-                    <div key={activity.id}>
-                      <h3>Activity: {activity.name}</h3>
-                      <h4>Duration: {activity.duration}</h4>
-                      <h4>Count: {activity.count}</h4>
-                    </div>
-                  );
-                })}
+              <div>
+                <div key={routine.id}>
+                  <h1>{routine.name}:</h1>
+                  <h4>Goal: {routine.goal}</h4>
+                  <h4>Creator: {routine.creatorName}</h4>
+                  {routine.activities.map((activity) => {
+                    return (
+                      <div key={activity.id}>
+                        <h3>Activity: {activity.name}</h3>
+                        <h4>Duration: {activity.duration}</h4>
+                        <h4>Count: {activity.count}</h4>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             );
           }

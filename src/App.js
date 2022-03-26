@@ -7,6 +7,7 @@ import Register from "./Register";
 import MyRoutines from "./MyRoutines";
 import Routines from "./Routines";
 import Navbar from "./Navbar";
+import UpdateRoutine from "./UpdateRoutine";
 export const url = "https://fitnesstrac-kr.herokuapp.com/api";
 
 const App = () => {
@@ -20,14 +21,11 @@ const App = () => {
   const [activites, setActivites] = useState([]);
 
   const fetchRoutine = async () => {
-    const routines = await fetch(
-      "http://fitnesstrac-kr.herokuapp.com/api/routines",
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const routines = await fetch(`${url}/routines`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     const info = await routines.json();
     setRoutines(info);
     console.log("routines fetched");
@@ -38,14 +36,11 @@ const App = () => {
     if (lsToken) {
       setToken(lsToken);
     }
-    const resp = await fetch(
-      "http://fitnesstrac-kr.herokuapp.com/api/users/me",
-      {
-        headers: {
-          Authorization: `Bearer ${lsToken}`,
-        },
-      }
-    );
+    const resp = await fetch(`${url}/users/me`, {
+      headers: {
+        Authorization: `Bearer ${lsToken}`,
+      },
+    });
     const info = await resp.json();
     console.log(info);
     console.log("user fetched");
@@ -53,14 +48,11 @@ const App = () => {
   };
 
   const fetchActivities = async () => {
-    const routines = await fetch(
-      "http://fitnesstrac-kr.herokuapp.com/api/activities",
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const routines = await fetch(`${url}/activities`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     const info = await routines.json();
 
     setActivites(info);
@@ -134,6 +126,11 @@ const App = () => {
               />
             }
             path="/Register"
+          />
+          <Route
+            exact
+            element={<UpdateRoutine user={user} routines={routines} />}
+            path="/UpdateRoutine"
           />
         </Routes>
       </div>
