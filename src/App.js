@@ -18,6 +18,7 @@ const App = () => {
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
   const [routines, setRoutines] = useState([]);
+  const [activites, setActivites] = useState([]);
 
   const fetchRoutine = async () => {
     const routines = await fetch(
@@ -61,6 +62,7 @@ const App = () => {
       }
     );
     const info = await routines.json();
+
     setActivites(info);
     console.log("activities fetched");
   };
