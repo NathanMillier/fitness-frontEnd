@@ -10,8 +10,6 @@ import Navbar from "./Navbar";
 import UpdateRoutine from "./UpdateRoutine";
 export const url = "https://fitnesstrac-kr.herokuapp.com/api";
 
-export const APIURL = "http://fitnesstrac-kr.herokuapp.com/api";
-
 const App = () => {
   const [token, setToken] = useState("");
   const [user, setUser] = useState(null);
