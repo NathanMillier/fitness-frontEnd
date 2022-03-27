@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Megrim&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Wire+One&display=swap");
+body {
+  background-image: url(https://cdn.wallpapersafari.com/23/0/Qpbwdo.jpg);
+}
+#nav {
+  display: flex;
+  flex-direction: column;
+  background-image: url(https://cdn.wallpapersafari.com/53/58/QhXCN0.jpg);
+  border: double aqua 15px;
+  height: auto;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  box-shadow: 0 2px 50px -2px aqua;
+}
+
+#navtitle {
+  display: flex;
+  justify-content: center;
+  font-family: "Megrim";
+  font-size: 40px;
+  color: aqua;
+  text-shadow: red 4px 2px;
+}
+#links {
+  display: flex;
+  justify-content: center;
+}
+.link {
+  display: flex;
+  flex-direction: column;
+  padding-right: 100px;
+  padding-bottom: 10px;
+  font-family: "Wire One";
+  font-size: 45px;
+  color: white;
+  text-decoration: none;
+}
+.link:hover {
+  color: yellow;
+  text-decoration: underline;
+}
+.link:visited {
+  text-decoration: none;
+  color: white;
+}
+h2 {
+  font-size: 75px;
+  font-family: "Wire One";
+  color: whitesmoke;
+  margin-left: 100px;
+  text-decoration: wavy;
+}
+
+.glow-on-hover {
+  margin-left: 50px;
+  width: 200px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+.glow-on-hover:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #007273,
+    #9df3f4,
+    #00f0f2,
+    #227273,
+    #009798
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:active {
+  color: aqua;
+  transform: scale(100px, 100px);
+}
+
+.glow-on-hover:active:after {
+  background: #000;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
