@@ -18,7 +18,7 @@ const Navbar = ({ user, setToken, setUser }) => {
         </Link>
         {user ? (
           <>
-            <Link to="/CreateActivities" className="link">
+            <Link to="/MyActivities" className="link">
               My Activities
             </Link>
             <Link
