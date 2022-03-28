@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const MyRoutines = ({ token, activities, user }) => {
+const MyActivities = ({ token, activities, user }) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
 
@@ -18,6 +18,7 @@ const MyRoutines = ({ token, activities, user }) => {
         body: JSON.stringify({
           name: name,
           description: description,
+          isPublic: true,
         }),
       }
     );
@@ -28,7 +29,7 @@ const MyRoutines = ({ token, activities, user }) => {
   return (
     <>
       <div>
-        Create Activiy Form
+        Create Your Activiy Below
         <form onSubmit={handleCreateActivity}>
           <input
             placeholder="Enter name"
@@ -70,4 +71,4 @@ const MyRoutines = ({ token, activities, user }) => {
   );
 };
 
-export default MyRoutines;
+export default MyActivities;
