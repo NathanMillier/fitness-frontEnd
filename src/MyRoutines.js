@@ -35,7 +35,12 @@ const MyRoutines = ({ token, routines, user }) => {
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-          UpdateRoutine
+
+          <input
+            placeholder="Enter goal"
+            value={goal}
+            onChange={(e) => setGoal(e.target.value)}
+          />
           <button type="submit">Submit Routine</button>
         </form>
       </div>
@@ -45,6 +50,7 @@ const MyRoutines = ({ token, routines, user }) => {
           if (routine.creatorId == user.id) {
             return (
               <div>
+                <form></form>
                 <div key={routine.id}>
                   <h1>{routine.name}:</h1>
                   <h4>Goal: {routine.goal}</h4>
