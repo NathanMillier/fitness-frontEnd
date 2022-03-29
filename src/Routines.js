@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Routines = ({ token, user, routines }) => {
   return (
     <>
-      <h1>Routines</h1>
+      <h2>Routines</h2>
       {user ? (
         <Link to="/MyRoutines">See My Routines</Link>
       ) : (
