@@ -241,3 +241,103 @@ h2 {
 .activitiesCard:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
+
+.routinesHeader {
+  color: white;
+  font-size: 3rem;
+  padding: 15px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.routinesCard {
+  background-color: black;
+  color: white;
+  border: double aqua 15px;
+  box-shadow: 0 2px 50px -2px cyan;
+  transition: 0.3s;
+  padding: 2px 16px;
+  margin: auto;
+  margin-bottom: 50px;
+  width: 45rem;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  border-radius: 15px;
+}
+
+.routinesCard:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.myRoutinesForm {
+  background-color: black;
+  color: white;
+  border: double aqua 15px;
+  box-shadow: 0 2px 50px -2px cyan;
+  transition: 0.3s;
+  padding: 2px 16px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 30rem;
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  border-radius: 15px;
+}
+
+.myRoutinesHeader {
+  color: white;
+  font-size: 3rem;
+  padding: 15px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.myRoutinesSubHead {
+  font-size: 1.25rem;
+  padding: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.myRoutinesCard {
+  background-color: black;
+  color: white;
+  border: double aqua 15px;
+  box-shadow: 0 2px 50px -2px cyan;
+  transition: 0.3s;
+  padding: 2px 16px;
+  margin: auto;
+  margin-bottom: 50px;
+  width: 45rem;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  border-radius: 15px;
+}
+
+.myRoutinesCard:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}

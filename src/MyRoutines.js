@@ -27,7 +27,7 @@ const MyRoutines = ({ token, routines, user }) => {
   };
   return (
     <>
-      <div>
+      <div className="myRoutinesForm">
         Create Routine Form
         <form onSubmit={handleCreateRoutine}>
           <input
@@ -44,14 +44,13 @@ const MyRoutines = ({ token, routines, user }) => {
           <button type="submit">Submit Routine</button>
         </form>
       </div>
+      <div className="myRountinesHeader">My Routines</div>
       <div>
-        My Routines
         {routines.map((routine) => {
           if (routine.creatorId == user.id) {
             return (
               <div>
-                <form></form>
-                <div key={routine.id}>
+                <div className="myRoutinesCard" key={routine.id}>
                   <h1>{routine.name}:</h1>
                   <h4>Goal: {routine.goal}</h4>
                   <h4>Creator: {routine.creatorName}</h4>

@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 const Routines = ({ token, user, routines }) => {
   return (
     <>
-      <h2>Routines</h2>
+      <div className="routinesHeader">
+        <h2>Routines</h2>
+      </div>
       {user ? (
         <Link to="/MyRoutines">See My Routines</Link>
       ) : (
@@ -19,8 +21,8 @@ const Routines = ({ token, user, routines }) => {
                 <h4>Creator: {routine.creatorName}</h4>
                 {routine.activities.map((activity) => {
                   return (
-                    <div key={activity.id}>
-                      <h3>Activity: {activity.name}</h3>
+                    <div className="routinesCard" key={activity.id}>
+                      <h1>Activity: {activity.name}</h1>
                       <h4>Duration: {activity.duration}</h4>
                       <h4>Count: {activity.count}</h4>
                     </div>
