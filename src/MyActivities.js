@@ -29,7 +29,7 @@ const MyActivities = ({ token, activities, user }) => {
 
   return (
     <>
-      <div>
+      <div className="myActivitiesForm">
         Create Your Activiy Below
         <form onSubmit={handleCreateActivity}>
           <input
@@ -47,11 +47,11 @@ const MyActivities = ({ token, activities, user }) => {
         </form>
       </div>
       <div>
-        My Activities
+        <div className="myActivitiesHeader">My Activities</div>
         {activities.map((activities) => {
           if (activities) {
             return (
-              <div key={activities.id}>
+              <div className="myActivitiesCard" key={activities.id}>
                 <h1>{activities.name}:</h1>
                 <h3>Description: {activities.description}</h3>
                 <h4>Creator: {activities.creatorName}</h4>

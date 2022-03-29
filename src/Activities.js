@@ -8,7 +8,7 @@ const Activities = ({ token, user, activities }) => {
       <div className="activitiesHeader">
         <h2>Activities</h2>
       </div>
-      <div className="activitiesSubHead">
+      <div>
         {user ? (
           <Link to="/MyActivities">Create new activity</Link>
         ) : (
