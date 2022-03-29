@@ -7,7 +7,7 @@ const Activities = ({ token, user, activities }) => {
     <>
       <h2>Activities</h2>
       {user ? (
-        <Link to="/CreateActivities">Create new activity</Link>
+        <Link to="/MyActivities">Create new activity</Link>
       ) : (
         "Login to create activities"
       )}
