@@ -68,7 +68,7 @@ const App = () => {
 
   return (
     <div id="container">
-      <Navbar user={user} setUser={setUser} setError={setToken} />
+      <Navbar user={user} setUser={setUser} setToken={setToken} />
       <div id="main-section">
         <Routes>
           <Route exact element={<Home user={user} />} path="/" />
