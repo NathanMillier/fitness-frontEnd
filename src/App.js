@@ -35,18 +35,21 @@ const App = () => {
   const fetchUser = async () => {
     const lsToken = localStorage.getItem("token");
 
-    try {
-      if (lsToken) {
-        setToken(lsToken);
-      }
-      const resp = await fetch(`${url}/users/me`, {
-        headers: {
-          Authorization: `Bearer ${lsToken}`,
-        },
-      });
-      const info = await resp.json();
-    } catch (info) {
-      throw error;
+    if (lsToken) {
+      setToken(lsToken);
+    }
+    // console.log(lsToken);
+    const resp = await fetch(`${url}/users/me`, {
+      headers: {
+        Authorization: `Bearer ${lsToken}`,
+      },
+    });
+    const info = await resp.json();
+
+    if (!info.error) {
+      console.log(info);
+      console.log("user fetched");
+      setUser(info);
     }
   };
 

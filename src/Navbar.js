@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const Navbar = ({ user, setToken, setUser }) => {
-  console.log(user);
+  // console.log(user);
   return (
     <div id="nav">
       <div id="navtitle">
