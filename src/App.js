@@ -37,7 +37,7 @@ const App = () => {
     if (lsToken) {
       setToken(lsToken);
     }
-    // console.log(lsToken);
+
     const resp = await fetch(`${url}/users/me`, {
       headers: {
         Authorization: `Bearer ${lsToken}`,
@@ -46,7 +46,6 @@ const App = () => {
     const info = await resp.json();
 
     if (!info.error) {
-      console.log(info);
       console.log("user fetched");
       setUser(info);
     }
