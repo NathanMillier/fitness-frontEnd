@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Megrim&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Wire+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Stalemate&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rampart+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Medula+One&display=swap");
 body {
   background-image: url(https://cdn.wallpapersafari.com/23/0/Qpbwdo.jpg);
 }
@@ -23,14 +26,7 @@ header {
   text-shadow: red 4px 2px;
   padding-left: 10px;
 }
-/* #navtitle {
-  display: flex;
-  justify-content: center;
-  font-family: "Megrim";
-  font-size: 40px;
-  color: aqua;
-  text-shadow: red 4px 2px;
-} */
+
 #links {
   display: flex;
   justify-content: center;
@@ -51,20 +47,43 @@ header {
   text-decoration: underline 2px;
 }
 
-.link:visited {
-  /* color: white; */
-}
-
 h2 {
   font-size: 75px;
   font-family: "Wire One";
   color: whitesmoke;
-  margin-left: 100px;
-  text-decoration: wavy;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+h3 {
+  display: flex;
+  justify-content: center;
+  margin-top: -60px;
 
+  /* font-family: "Stalemate"; */
+  font-size: 20px;
+  font-family: "Rampart One";
+  color: black;
+  text-shadow: whitesmoke 2px 1px;
+  margin-bottom: 150px;
+}
+h4 {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+.steps {
+  background-image: url(https://wallpaperaccess.com/full/1087589.jpg);
+  background-position: fixed;
+  height: 500px;
+}
+.create {
+  font-size: 18px;
+}
 .glow-on-hover {
-  margin-left: 50px;
+  margin-left: 650px;
   width: 200px;
   height: 50px;
   border: none;
@@ -146,7 +165,7 @@ footer {
 }
 .tag {
   display: flex;
-  padding-top: 50px;
+  padding-top: 30px;
   padding-left: 15px;
   color: white;
 }
