@@ -34,7 +34,7 @@ const Login = ({
       }
       setToken(data.token);
       localStorage.setItem("token", data.token);
-      history("/MyRoutines");
+      history("/");
     } catch (error) {
       console.error(error);
     }
@@ -49,6 +49,7 @@ const Login = ({
           onChange={(e) => setUsername(e.target.value)}
         />
         <input
+          type="password"
           required
           value={password}
           onChange={(e) => setPassword(e.target.value)}
