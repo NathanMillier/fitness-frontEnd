@@ -99,7 +99,12 @@ const App = () => {
           <Route
             exact
             element={
-              <MyActivities user={user} token={token} activities={activites} />
+              <MyActivities
+                user={user}
+                token={token}
+                activities={activites}
+                routines={routines}
+              />
             }
             path="/MyActivities"
           />

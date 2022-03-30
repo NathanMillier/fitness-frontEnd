@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const MyActivities = ({ token, activities, user }) => {
+const MyActivities = ({ token, activities, user, routines }) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   console.log(activities);
@@ -48,21 +48,18 @@ const MyActivities = ({ token, activities, user }) => {
       </div>
       <div>
         <div className="myActivitiesHeader">My Activities</div>
-        {activities.map((activities) => {
-          if (activities) {
+        {routines.map((routine) => {
+          if (routine.creatorId == user.id) {
             return (
-              <div className="myActivitiesCard" key={activities.id}>
-                <h1>{activities.name}:</h1>
-                <h3>Description: {activities.description}</h3>
-                <h4>Creator: {activities.creatorName}</h4>
-                {/* {routine.activities.map((activity) => {
+              <div className="myActivitiesCard" key={routine.id}>
+                {routine.activities.map((activity) => {
                   return (
                     <div key={activity.id}>
                       <h3>Activity: {activity.name}</h3>
                       <h4>Description: {activity.description}</h4>
                     </div>
                   );
-                })} */}
+                })}
               </div>
             );
           }
