@@ -2,10 +2,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = ({ user, setToken, setUser }) => {
   return (
-    <div id="nav">
-      <div id="navtitle">
-        <h1>Fitness Tracker</h1>
-      </div>
+    <div id="nav" className="navBar">
       <div id="links">
         <Link to="/" className="link">
           Hello

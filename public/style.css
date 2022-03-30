@@ -2,17 +2,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Wire+One&display=swap");
 body {
   background-image: url(https://cdn.wallpapersafari.com/23/0/Qpbwdo.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 #nav {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  /* align-items: center;
+  align-content: center;*/
+  justify-content: center
+
+  font-size: 2rem;
+  font-family: "Wire One";
+  color: whitesmoke;
+  text-decoration: wavy;
+
   background-image: url(https://cdn.wallpapersafari.com/53/58/QhXCN0.jpg);
   border: double aqua 15px;
   height: auto;
-  top: 0px;
-  left: 0px;
-  right: 0px;
   box-shadow: 0 2px 50px -2px aqua;
+  border-radius: 15px;
 }
 
 #navtitle {
@@ -23,15 +34,13 @@ body {
   color: aqua;
   text-shadow: red 4px 2px;
 }
-#links {
+/* #links {
   display: flex;
   justify-content: center;
-}
+} */
 .link {
-  display: flex;
-  flex-direction: column;
-  padding-right: 100px;
-  padding-bottom: 10px;
+  display: flexbox;
+  flex-direction: row;
   font-family: "Wire One";
   font-size: 45px;
   color: white;
@@ -45,7 +54,7 @@ body {
   text-decoration: none;
   color: white;
 }
-h2 {
+#nav h2 {
   font-size: 75px;
   font-family: "Wire One";
   color: whitesmoke;
@@ -126,4 +135,264 @@ h2 {
   100% {
     background-position: 0 0;
   }
+}
+
+.homeHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-family: "Wire One";
+  color: whitesmoke;
+  text-decoration: wavy;
+}
+
+.homeMainCard {
+  background-color: black;
+  color: white;
+  border: double aqua 15px;
+  box-shadow: 0 2px 50px -2px cyan;
+  transition: 0.3s;
+  padding: 2px 16px;
+  margin: auto;
+  margin-bottom: 50px;
+  width: 45rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  border-radius: 15px;
+}
+
+.myActivitiesForm {
+  background-color: black;
+  color: white;
+  border: double aqua 15px;
+  box-shadow: 0 2px 50px -2px cyan;
+  transition: 0.3s;
+  padding: 2px 16px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 30rem;
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  border-radius: 15px;
+}
+
+.myActivitiesHeader {
+  color: white;
+  font-size: 3rem;
+  padding: 15px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.myActivitiesSubHead {
+  font-size: 1.25rem;
+  padding: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.myActivitiesCard {
+  background-color: black;
+  color: white;
+  border: double aqua 15px;
+  box-shadow: 0 2px 50px -2px cyan;
+  transition: 0.3s;
+  padding: 2px 16px;
+  margin: auto;
+  margin-bottom: 50px;
+  width: 45rem;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  border-radius: 15px;
+}
+
+.myActivitiesCard:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.activitiesHeader {
+  color: white;
+  font-size: 3rem;
+  padding: 15px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.activitiesSubHead {
+  font-size: 1.25rem;
+  padding: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.activitiesCard {
+  background-color: black;
+  color: white;
+  border: double aqua 15px;
+  box-shadow: 0 2px 50px -2px cyan;
+  transition: 0.3s;
+  padding: 2px 16px;
+  margin: auto;
+  margin-bottom: 50px;
+  width: 45rem;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  border-radius: 15px;
+}
+
+.activitiesCard:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.routinesHeader {
+  color: white;
+  font-size: 3rem;
+  padding: 15px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+/* .routinesCard {
+  background-color: black;
+  color: white;
+  border: double aqua 15px;
+  box-shadow: 0 2px 50px -2px cyan;
+  transition: 0.3s;
+  padding: 2px 16px;
+  margin: auto;
+  margin-bottom: 50px;
+  width: 45rem;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  border-radius: 15px;
+} */
+
+.publicRoutinesCard {
+  background-color: black;
+  color: white;
+  border: double aqua 15px;
+  box-shadow: 0 2px 50px -2px cyan;
+  transition: 0.3s;
+  padding: 2px 16px;
+  margin: auto;
+  margin-bottom: 50px;
+  width: 45rem;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  border-radius: 15px;
+}
+
+.routinesCard:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.myRoutinesForm {
+  background-color: black;
+  color: white;
+  border: double aqua 15px;
+  box-shadow: 0 2px 50px -2px cyan;
+  transition: 0.3s;
+  padding: 2px 16px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 30rem;
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  border-radius: 15px;
+}
+
+.myRoutinesHeader {
+  color: white;
+  font-size: 3rem;
+  padding: 15px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.myRoutinesSubHead {
+  font-size: 1.25rem;
+  padding: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.myRoutinesCard {
+  background-color: black;
+  color: white;
+  border: double aqua 15px;
+  box-shadow: 0 2px 50px -2px cyan;
+  transition: 0.3s;
+  padding: 2px 16px;
+  margin: auto;
+  margin-bottom: 50px;
+  width: 45rem;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  border-radius: 15px;
+}
+
+.myRoutinesCard:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
