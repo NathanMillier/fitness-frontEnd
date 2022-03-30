@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import Home from "./Home";
 import Activities from "./Activities";
+import MyActivities from "./MyActivities";
 import Login from "./Login";
 import Register from "./Register";
 import MyRoutines from "./MyRoutines";
@@ -94,6 +95,13 @@ const App = () => {
             exact
             element={<Activities user={user} activities={activites} />}
             path="/Activities"
+          />
+          <Route
+            exact
+            element={
+              <MyActivities user={user} token={token} activities={activites} />
+            }
+            path="/MyActivities"
           />
 
           <Route

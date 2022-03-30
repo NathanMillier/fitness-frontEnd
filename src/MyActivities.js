@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 
-const MyRoutines = ({ token, activities, user }) => {
+const MyActivities = ({ token, activities, user }) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
+  console.log(activities);
 
   const handleCreateActivity = async (e) => {
     e.preventDefault();
@@ -18,6 +19,7 @@ const MyRoutines = ({ token, activities, user }) => {
         body: JSON.stringify({
           name: name,
           description: description,
+          isPublic: true,
         }),
       }
     );
@@ -28,7 +30,7 @@ const MyRoutines = ({ token, activities, user }) => {
   return (
     <>
       <div>
-        Create Activiy Form
+        Create Your Activiy Below
         <form onSubmit={handleCreateActivity}>
           <input
             placeholder="Enter name"
@@ -47,20 +49,20 @@ const MyRoutines = ({ token, activities, user }) => {
       <div>
         My Activities
         {activities.map((activities) => {
-          if (actvities.creatorId == user.id) {
+          if (activities) {
             return (
-              <div key={actvities.id}>
-                <h1>{actvities.name}:</h1>
-                <h3>Description: {actvities.description}</h3>
+              <div key={activities.id}>
+                <h1>{activities.name}:</h1>
+                <h3>Description: {activities.description}</h3>
                 <h4>Creator: {activities.creatorName}</h4>
-                {routine.activities.map((activities) => {
+                {/* {routine.activities.map((activity) => {
                   return (
                     <div key={activity.id}>
                       <h3>Activity: {activity.name}</h3>
                       <h4>Description: {activity.description}</h4>
                     </div>
                   );
-                })}
+                })} */}
               </div>
             );
           }
@@ -70,4 +72,4 @@ const MyRoutines = ({ token, activities, user }) => {
   );
 };
 
-export default MyRoutines;
+export default MyActivities;

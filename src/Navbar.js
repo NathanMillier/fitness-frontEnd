@@ -18,6 +18,31 @@ const Navbar = ({ user, setToken, setUser }) => {
         </Link>
         {user ? (
           <>
+            <Link to="/MyActivities" className="link">
+              My Activities
+            </Link>
+            <Link
+              onClick={() => {
+                setToken("");
+                setUser(null);
+                localStorage.removeItem("token");
+              }}
+              to="/"
+              className="link"
+            >
+              Logout
+            </Link>
+          </>
+        ) : (
+          <>
+            <Link to="/Register" className="link">
+              Login/Register
+            </Link>
+          </>
+        )}
+
+        {user ? (
+          <>
             <Link to="/MyRoutines" className="link">
               My Routines
             </Link>
