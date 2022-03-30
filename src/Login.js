@@ -15,27 +15,30 @@ const Login = ({
 
   const handleLogin = async (event) => {
     event.preventDefault();
+    try {
+      const response = await fetch(`${url}/users/login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username,
+          password,
+        }),
+      });
 
-    const response = await fetch(`${url}/users/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        username,
-        password,
-      }),
-    });
-
-    const data = await response.json();
-    console.log(data);
-    if (data.error) {
-      setError(data.error);
-      return;
+      const data = await response.json();
+      console.log(data);
+      if (data.error) {
+        setError(data.error);
+        return;
+      }
+      setToken(data.token);
+      localStorage.setItem("token", data.token);
+      history("/MyRoutines");
+    } catch (error) {
+      console.error(error);
     }
-    setToken(data.token);
-    localStorage.setItem("token", data.token);
-    history("/MyRoutines");
   };
 
   return (
