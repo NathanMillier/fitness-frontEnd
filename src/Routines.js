@@ -15,7 +15,7 @@ const Routines = ({ token, user, routines }) => {
         {routines.map((routine) => {
           if (routine.isPublic) {
             return (
-              <div key={routine.id}>
+              <div className="publicRoutinesCard" key={routine.id}>
                 <h1>{routine.name}:</h1>
                 <h4>Goal: {routine.goal}</h4>
                 <h4>Creator: {routine.creatorName}</h4>
