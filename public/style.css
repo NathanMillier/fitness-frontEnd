@@ -12,7 +12,7 @@ body {
   flex-direction: row;
   /* align-items: center;
   align-content: center;*/
-  justify-content: center
+  justify-content: center;
 
   font-size: 2rem;
   font-family: "Wire One";
@@ -290,7 +290,7 @@ body {
   justify-content: center;
 }
 
-/* .routinesCard {
+.routinesCard {
   background-color: black;
   color: white;
   border: double aqua 15px;
@@ -300,26 +300,7 @@ body {
   margin: auto;
   margin-bottom: 50px;
   width: 45rem;
-  height: 20rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  border-radius: 15px;
-} */
-
-.publicRoutinesCard {
-  background-color: black;
-  color: white;
-  border: double aqua 15px;
-  box-shadow: 0 2px 50px -2px cyan;
-  transition: 0.3s;
-  padding: 2px 16px;
-  margin: auto;
-  margin-bottom: 50px;
-  width: 45rem;
-  height: 20rem;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
