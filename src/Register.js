@@ -43,7 +43,7 @@ const Register = ({
       }
       setToken(data.token);
       localStorage.setItem("token", data.token);
-      history("/MyRoutines");
+      history("/");
     } catch (error) {
       console.error(error);
     }
