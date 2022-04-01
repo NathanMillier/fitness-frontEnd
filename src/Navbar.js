@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ user, setToken, setUser }) => {
   return (
     <>
       <section className="heroimage">
