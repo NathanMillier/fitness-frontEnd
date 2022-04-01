@@ -1,8 +1,25 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
-const Activities = ({ token, user, activities }) => {
-  console.log(activities);
+const Activities = ({ routines, user, activities, url }) => {
+  const fetchActivitiesRoutines = async (event) => {
+    const response = await fetch(
+      `${url}/activities/${singleRoutine.id}/routines`,
+      {
+        headers: {
+          "Content-Type": "applicaton/json",
+        },
+      }
+    );
+    // console.log(response);
+    const data = await response.json();
+    console.log(data);
+  };
+
+  useEffect(async () => {
+    await fetchActivitiesRoutines();
+  }, [user]);
+
   return (
     <>
       <div className="activitiesHeader">
@@ -16,15 +33,19 @@ const Activities = ({ token, user, activities }) => {
         )}
       </div>
       <div>
-        {activities.map((activities) => {
-          return (
-            <div className="activitiesCard" key={activities.id}>
-              <h1>hi {user.name}</h1>
-              <h1>{activities.name}:</h1>
-              <h3>Description {activities.description}</h3>
-            </div>
-          );
-        })}
+        {activities
+          ? activities.map((activitie) => {
+              return (
+                <div className="activitiesCard" key={activitie.id}>
+                  {/* <h1>hi {user.name}</h1> */}
+                  <Link to={`/Activities/${activitie.id}`}>
+                    <h1>{activitie.name}:</h1>
+                    <h3>Description: {activitie.description}</h3>
+                  </Link>
+                </div>
+              );
+            })
+          : null}
       </div>
     </>
   );

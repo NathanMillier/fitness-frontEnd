@@ -9,6 +9,7 @@ import MyRoutines from "./MyRoutines";
 import Routines from "./Routines";
 import Navbar from "./Navbar";
 import UpdateRoutine from "./UpdateRoutine";
+import SingleActivity from "./SingleActivity";
 export const url = "https://fitnesstrac-kr.herokuapp.com/api";
 
 const App = () => {
@@ -64,10 +65,10 @@ const App = () => {
     console.log("activities fetched");
   };
 
-  useEffect(() => {
-    fetchUser();
-    fetchRoutine();
-    fetchActivities();
+  useEffect(async () => {
+    await fetchUser();
+    await fetchRoutine();
+    await fetchActivities();
   }, [token]);
 
   return (
@@ -85,15 +86,20 @@ const App = () => {
 
           <Route
             exact
-            element={
-              <MyRoutines user={user} token={token} routines={routines} />
-            }
+            element={<MyRoutines user={user} token={token} />}
             path="/MyRoutines"
           />
 
           <Route
             exact
-            element={<Activities user={user} activities={activites} />}
+            element={
+              <Activities
+                user={user}
+                activities={activites}
+                routines={routines}
+                url={url}
+              />
+            }
             path="/Activities"
           />
           <Route
@@ -104,6 +110,8 @@ const App = () => {
                 token={token}
                 activities={activites}
                 routines={routines}
+                error={error}
+                setError={setError}
               />
             }
             path="/MyActivities"
@@ -148,6 +156,11 @@ const App = () => {
             exact
             element={<UpdateRoutine user={user} routines={routines} />}
             path="/UpdateRoutine"
+          />
+          <Route
+            exact
+            element={<SingleActivity activites={activites} />}
+            path="/Activities/:activityId"
           />
         </Routes>
       </div>

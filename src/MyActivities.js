@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from "react";
 
-const MyActivities = ({ token, activities, user, routines }) => {
+const MyActivities = ({
+  token,
+  activities,
+  user,
+  routines,
+  error,
+  setError,
+}) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   console.log(activities);
@@ -24,6 +31,9 @@ const MyActivities = ({ token, activities, user, routines }) => {
       }
     );
     const info = await resp.json();
+    if (info.error) {
+      setError(info.error);
+    }
     console.log(info);
   };
 
@@ -45,8 +55,9 @@ const MyActivities = ({ token, activities, user, routines }) => {
           />
           <button type="submit">Submit Activity</button>
         </form>
+        <p>{error}, chose another name for you activity.</p>
       </div>
-      <div>
+      {/* <div>
         <div className="myActivitiesHeader">My Activities</div>
         {routines.map((routine) => {
           if (routine.creatorId == user.id) {
@@ -64,7 +75,7 @@ const MyActivities = ({ token, activities, user, routines }) => {
             );
           }
         })}
-      </div>
+      </div> */}
     </>
   );
 };
