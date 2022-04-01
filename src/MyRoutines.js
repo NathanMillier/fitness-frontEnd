@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { Link, Route, Routes } from "react-router-dom";
+import UpdateRoutine from "./UpdateRoutine";
 
-const MyRoutines = ({ token, routines, user }) => {
+const MyRoutines = ({ token, routines, user, myRoutine, fecthmyRoutine }) => {
   const [name, setName] = useState("");
   const [goal, setGoal] = useState("");
 
@@ -23,8 +25,10 @@ const MyRoutines = ({ token, routines, user }) => {
       }
     );
     const info = await resp.json();
+    fecthmyRoutine();
     console.log(info);
   };
+
   return (
     <>
       <div className="myRoutinesForm">
@@ -46,27 +50,25 @@ const MyRoutines = ({ token, routines, user }) => {
       </div>
       <div className="myRountinesHeader">My Routines</div>
       <div>
-        {routines.map((routine) => {
-          if (routine.creatorId == user.id) {
-            return (
-              <div>
-                <div className="myRoutinesCard" key={routine.id}>
-                  <h1>{routine.name}:</h1>
-                  <h4>Goal: {routine.goal}</h4>
-                  <h4>Creator: {routine.creatorName}</h4>
-                  {routine.activities.map((activity) => {
-                    return (
-                      <div key={activity.id}>
-                        <h3>Activity: {activity.name}</h3>
-                        <h4>Duration: {activity.duration}</h4>
-                        <h4>Count: {activity.count}</h4>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            );
-          }
+        {myRoutine.map((routine, idx) => {
+          return (
+            <div className="myRoutinesCard" key={idx}>
+              <Link to={`/UpdateRoutine/${routine.id}`} className="link">
+                {routine.name}
+              </Link>
+              <h4>Goal: {routine.goal}</h4>
+              <h4>Creator: {routine.creatorName}</h4>
+              {routine.activities.map((activity, idx) => {
+                return (
+                  <div key={idx}>
+                    <h3>Activity: {activity.name}</h3>
+                    <h4>Duration: {activity.duration}</h4>
+                    <h4>Count: {activity.count}</h4>
+                  </div>
+                );
+              })}
+            </div>
+          );
         })}
       </div>
     </>

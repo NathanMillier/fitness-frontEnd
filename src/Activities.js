@@ -19,7 +19,7 @@ const Activities = ({ token, user, activities }) => {
         {activities.map((activities) => {
           return (
             <div className="activitiesCard" key={activities.id}>
-              <h1>hi {user.name}</h1>
+              {/* <h1>hi {user.name}</h1> */}
               <h1>{activities.name}:</h1>
               <h3>Description {activities.description}</h3>
             </div>
