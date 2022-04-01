@@ -9,6 +9,7 @@ import MyRoutines from "./MyRoutines";
 import Routines from "./Routines";
 import Navbar from "./Navbar";
 import UpdateRoutine from "./UpdateRoutine";
+import SingleActivity from "./SingleActivity";
 export const url = "https://fitnesstrac-kr.herokuapp.com/api";
 
 const App = () => {
@@ -66,21 +67,6 @@ const App = () => {
     console.log("activities fetched");
   };
 
-  const fecthmyRoutine = async (e) => {
-    console.log("HIT");
-    const resp = await fetch(
-      `http://fitnesstrac-kr.herokuapp.com/api/users/${user.username}/routines`,
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
-    const info = await resp.json();
-    setmyRoutine(info);
-    console.log("MYROUTINE");
-  };
-
   useEffect(async () => {
     await fetchUser();
     await fetchRoutine();
@@ -106,21 +92,20 @@ const App = () => {
 
           <Route
             exact
-            element={
-              <MyRoutines
-                user={user}
-                token={token}
-                routines={routines}
-                myRoutine={myRoutine}
-                fecthmyRoutine={fecthmyRoutine}
-              />
-            }
+            element={<MyRoutines user={user} token={token} />}
             path="/MyRoutines"
           />
 
           <Route
             exact
-            element={<Activities user={user} activities={activites} />}
+            element={
+              <Activities
+                user={user}
+                activities={activites}
+                routines={routines}
+                url={url}
+              />
+            }
             path="/Activities"
           />
           <Route
@@ -131,6 +116,8 @@ const App = () => {
                 token={token}
                 activities={activites}
                 routines={routines}
+                error={error}
+                setError={setError}
               />
             }
             path="/MyActivities"
@@ -175,6 +162,11 @@ const App = () => {
             exact
             element={<UpdateRoutine user={user} myRoutine={myRoutine} />}
             path="/UpdateRoutine/:routineId"
+          />
+          <Route
+            exact
+            element={<SingleActivity activites={activites} />}
+            path="/Activities/:activityId"
           />
         </Routes>
       </div>

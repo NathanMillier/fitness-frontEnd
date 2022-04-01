@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 const Navbar = ({ user, setToken, setUser }) => {
+  console.log(user);
   return (
     <>
       <section className="heroimage">
@@ -17,9 +18,28 @@ const Navbar = ({ user, setToken, setUser }) => {
             <Link to="/Activities" className="link">
               Activities
             </Link>
-            <Link to="/Login" className="link">
-              Login/Register
-            </Link>
+
+            {user ? (
+              <>
+                <Link
+                  className="link"
+                  to="/"
+                  onClick={() => {
+                    setToken("");
+                    setUser(null);
+                    localStorage.removeItem("token");
+                  }}
+                >
+                  Logout
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link to="/Register" className="link">
+                  Login/Register
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </section>
