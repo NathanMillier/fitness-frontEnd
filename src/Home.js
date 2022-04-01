@@ -8,9 +8,9 @@ const Home = () => {
       <h2>Welcome to Your Custom Fitness Tracker Experience</h2>
       <h3>Your Journey to Fit</h3>
       <div className="icons">
+        <FontAwesomeIcon icon={faPersonSwimming} />
         <FontAwesomeIcon icon={faPersonRunning} />
         <FontAwesomeIcon icon={faPersonBiking} />
-        <FontAwesomeIcon icon={faPersonSwimming} />
       </div>
       <div className="steps">
         <h4>Step 1: If you are a new user, set up your account below</h4>

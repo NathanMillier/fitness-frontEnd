@@ -107,8 +107,6 @@ h5 {
 .steps {
   border: black solid 7px;
   width: 1000px;
-  /* margin-left: 190px;
-  margin-top: -70px; */
 }
 
 .glow-on-hover {
@@ -124,6 +122,8 @@ h5 {
   z-index: 0;
   border-radius: 10px;
   margin-bottom: 10px;
+  font-size: 25px;
+  font-family: "Wire One";
 }
 
 .glow-on-hover:before {
