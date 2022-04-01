@@ -2,44 +2,28 @@ import { Link } from "react-router-dom";
 
 const Navbar = ({ user, setToken, setUser }) => {
   return (
-    <div id="nav" className="navBar">
-      <div id="links">
-        <Link to="/" className="link">
-          Hello
-        </Link>
-        <Link to="/Routines" className="link">
-          Routines
-        </Link>
-        <Link to="/Activities" className="link">
-          Activities
-        </Link>
+    <>
+      <section className="heroimage">
+        <div id="nav">
+          <h1>Fitness Tracker</h1>
 
-        {user ? (
-          <>
-            <Link to="/MyRoutines" className="link">
-              My Routines
+          <div id="links">
+            <Link to="/" className="link">
+              Hello
             </Link>
-            <Link
-              onClick={() => {
-                setToken("");
-                setUser(null);
-                localStorage.removeItem("token");
-              }}
-              to="/"
-              className="link"
-            >
-              Logout
+            <Link to="/Routines" className="link">
+              Routines
             </Link>
-          </>
-        ) : (
-          <>
-            <Link to="/Register" className="link">
+            <Link to="/Activities" className="link">
+              Activities
+            </Link>
+            <Link to="/Login" className="link">
               Login/Register
             </Link>
-          </>
-        )}
-      </div>
-    </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 };
 

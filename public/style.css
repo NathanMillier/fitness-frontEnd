@@ -1,69 +1,118 @@
 @import url("https://fonts.googleapis.com/css2?family=Megrim&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Wire+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Stalemate&display=swap");
 body {
-  background-image: url(https://cdn.wallpapersafari.com/23/0/Qpbwdo.jpg);
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  /* background-image: url(https://cdn.wallpapersafari.com/23/0/Qpbwdo.jpg); */
+  background-color: white;
+  margin: 0;
+  padding: 0;
 }
+header {
+  background-image: url(https://4kwallpapers.com/images/wallpapers/workout-limitless-endurance-gym-colorful-smoke-3556x2000-929.jpg);
+}
+
 #nav {
   display: flex;
-  flex-direction: row;
-  /* align-items: center;
-  align-content: center;*/
-  justify-content: center;
-
-  font-size: 2rem;
-  font-family: "Wire One";
-  color: whitesmoke;
-  text-decoration: wavy;
-
-  background-image: url(https://cdn.wallpapersafari.com/53/58/QhXCN0.jpg);
-  border: double aqua 15px;
-  height: auto;
-  box-shadow: 0 2px 50px -2px aqua;
-  border-radius: 15px;
+  background: transparent;
+  height: 125px;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
 }
-
-#navtitle {
-  display: flex;
-  justify-content: center;
-  font-family: "Megrim";
-  font-size: 40px;
+#nav:active {
   color: aqua;
-  text-shadow: red 4px 2px;
 }
-/* #links {
+#links {
   display: flex;
-  justify-content: center;
-} */
+  justify-content: flex-end;
+}
+#main-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .link {
-  display: flexbox;
-  flex-direction: row;
   font-family: "Wire One";
   font-size: 45px;
   color: white;
   text-decoration: none;
+  padding-right: 40px;
 }
 .link:hover {
-  color: yellow;
-  text-decoration: underline;
+  color: #984950;
+  text-shadow: 0 0 5px red;
+  text-decoration: underline 2px aqua;
 }
-.link:visited {
-  text-decoration: none;
-  color: white;
+h1 {
+  display: flex;
+  justify-content: left;
+  font-family: "Megrim";
+  font-size: 65px;
+  color: aqua;
+  text-shadow: 0 0 5px white;
+  padding-left: 15px;
 }
 #nav h2 {
   font-size: 75px;
   font-family: "Wire One";
-  color: whitesmoke;
-  margin-left: 100px;
-  text-decoration: wavy;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h3 {
+  display: flex;
+  justify-content: center;
+  margin-top: -60px;
+  font-family: "Stalemate";
+  font-size: 50px;
+  background: -webkit-linear-gradient(#802c2b, #467589);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: black;
+  margin-bottom: 150px;
+}
+h4 {
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+h5 {
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+.heroimage {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+.heroimage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(https://4kwallpapers.com/images/wallpapers/workout-limitless-endurance-gym-colorful-smoke-3556x2000-929.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  filter: brightness(60%);
+}
+.steps {
+  border: black solid 7px;
+  width: 1000px;
+  margin-left: 190px;
+  margin-top: -70px;
 }
 
 .glow-on-hover {
-  margin-left: 50px;
+  margin-left: 400px;
   width: 200px;
   height: 50px;
   border: none;
@@ -74,6 +123,7 @@ body {
   position: relative;
   z-index: 0;
   border-radius: 10px;
+  margin-bottom: 10px;
 }
 
 .glow-on-hover:before {
@@ -82,9 +132,14 @@ body {
     45deg,
     #007273,
     #9df3f4,
+    #522b45,
     #00f0f2,
+    #802c2b,
     #227273,
-    #009798
+    #009798,
+    #522b45,
+    #802c2b,
+    #467589
   );
   position: absolute;
   top: -2px;
@@ -102,11 +157,12 @@ body {
 
 .glow-on-hover:active {
   color: aqua;
-  transform: scale(100px, 100px);
+  transform: translate(0px, 5px, 5px);
+  border: solid 2px black;
 }
 
 .glow-on-hover:active:after {
-  background: #000;
+  background: black;
 }
 
 .glow-on-hover:hover:before {
@@ -119,7 +175,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #111;
+  background: black;
   left: 0;
   top: 0;
   border-radius: 10px;
@@ -136,244 +192,24 @@ body {
     background-position: 0 0;
   }
 }
-
-.homeHeader {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  font-size: 3rem;
-  font-family: "Wire One";
-  color: whitesmoke;
-  text-decoration: wavy;
-}
-
-.homeMainCard {
-  background-color: black;
-  color: white;
-  border: double aqua 15px;
-  box-shadow: 0 2px 50px -2px cyan;
-  transition: 0.3s;
-  padding: 2px 16px;
-  margin: auto;
-  margin-bottom: 50px;
-  width: 45rem;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  border-radius: 15px;
-}
-
-.myActivitiesForm {
-  background-color: black;
-  color: white;
-  border: double aqua 15px;
-  box-shadow: 0 2px 50px -2px cyan;
-  transition: 0.3s;
-  padding: 2px 16px;
-  margin: auto;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  width: 30rem;
-  height: 10rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  border-radius: 15px;
-}
-
-.myActivitiesHeader {
-  color: white;
-  font-size: 3rem;
-  padding: 15px;
-  margin-bottom: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-}
-
-.myActivitiesSubHead {
-  font-size: 1.25rem;
-  padding: 25px;
+.icons {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  align-content: center;
   justify-content: space-between;
-}
-
-.myActivitiesCard {
-  background-color: black;
-  color: white;
-  border: double aqua 15px;
-  box-shadow: 0 2px 50px -2px cyan;
-  transition: 0.3s;
-  padding: 2px 16px;
-  margin: auto;
+  align-items: center;
+  margin-top: -95px;
   margin-bottom: 50px;
-  width: 45rem;
-  height: 20rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  border-radius: 15px;
+  font-size: 100px;
 }
-
-.myActivitiesCard:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-
-.activitiesHeader {
-  color: white;
-  font-size: 3rem;
-  padding: 15px;
-  margin-bottom: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-}
-
-.activitiesSubHead {
-  font-size: 1.25rem;
-  padding: 25px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  align-content: center;
-  justify-content: space-between;
-}
-
-.activitiesCard {
+footer {
   background-color: black;
+
+  height: 100px;
+  width: 100%;
+}
+.tag {
+  display: flex;
+  padding-top: 60px;
+  padding-left: 15px;
   color: white;
-  border: double aqua 15px;
-  box-shadow: 0 2px 50px -2px cyan;
-  transition: 0.3s;
-  padding: 2px 16px;
-  margin: auto;
-  margin-bottom: 50px;
-  width: 45rem;
-  height: 20rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  border-radius: 15px;
-}
-
-.activitiesCard:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-
-.routinesHeader {
-  color: white;
-  font-size: 3rem;
-  padding: 15px;
-  margin-bottom: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-}
-
-.routinesCard {
-  background-color: black;
-  color: white;
-  border: double aqua 15px;
-  box-shadow: 0 2px 50px -2px cyan;
-  transition: 0.3s;
-  padding: 2px 16px;
-  margin: auto;
-  margin-bottom: 50px;
-  width: 45rem;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  border-radius: 15px;
-}
-
-.routinesCard:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-
-.myRoutinesForm {
-  background-color: black;
-  color: white;
-  border: double aqua 15px;
-  box-shadow: 0 2px 50px -2px cyan;
-  transition: 0.3s;
-  padding: 2px 16px;
-  margin: auto;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  width: 30rem;
-  height: 10rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  border-radius: 15px;
-}
-
-.myRoutinesHeader {
-  color: white;
-  font-size: 3rem;
-  padding: 15px;
-  margin-bottom: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-}
-
-.myRoutinesSubHead {
-  font-size: 1.25rem;
-  padding: 25px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  align-content: center;
-  justify-content: space-between;
-}
-
-.myRoutinesCard {
-  background-color: black;
-  color: white;
-  border: double aqua 15px;
-  box-shadow: 0 2px 50px -2px cyan;
-  transition: 0.3s;
-  padding: 2px 16px;
-  margin: auto;
-  margin-bottom: 50px;
-  width: 45rem;
-  height: 20rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  border-radius: 15px;
-}
-
-.myRoutinesCard:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
