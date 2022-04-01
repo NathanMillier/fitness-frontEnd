@@ -52,7 +52,7 @@ h1 {
   text-shadow: 0 0 5px white;
   padding-left: 15px;
 }
-#nav h2 {
+h2 {
   font-size: 75px;
   font-family: "Wire One";
   color: black;
@@ -107,8 +107,6 @@ h5 {
 .steps {
   border: black solid 7px;
   width: 1000px;
-  margin-left: 190px;
-  margin-top: -70px;
 }
 
 .glow-on-hover {
