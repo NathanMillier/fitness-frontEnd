@@ -201,6 +201,7 @@ h5 {
   margin-bottom: 50px;
   font-size: 100px;
 }
+
 footer {
   background-color: black;
 
@@ -212,4 +213,8 @@ footer {
   padding-top: 60px;
   padding-left: 15px;
   color: white;
+}
+.routinesCard {
+  border: 2px solid black;
+  margin-bottom: 10px;
 }
