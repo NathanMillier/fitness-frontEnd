@@ -190,6 +190,7 @@ h5 {
     background-position: 0 0;
   }
 }
+<<<<<<< HEAD
 .icons {
   display: flex;
   flex-direction: row;
@@ -199,6 +200,9 @@ h5 {
   margin-bottom: 50px;
   font-size: 100px;
 }
+=======
+
+>>>>>>> 39cf49e447433fbbc8c6d921222e6493d94da8a1
 footer {
   background-color: black;
 

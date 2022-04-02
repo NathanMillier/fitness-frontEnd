@@ -22,11 +22,11 @@ const Routines = ({ token, user, routines }) => {
                 <div>
                   {routine.activities.map((activity) => {
                     return (
-                      <>
+                      <div key={activity.id}>
                         <h1>Activity: {activity.name}</h1>
                         <h4>Duration: {activity.duration}</h4>
                         <h4>Count: {activity.count}</h4>
-                      </>
+                      </div>
                     );
                   })}
                 </div>

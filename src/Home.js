@@ -2,6 +2,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPersonRunning } from "@fortawesome/free-solid-svg-icons";
 import { faPersonBiking } from "@fortawesome/free-solid-svg-icons";
 import { faPersonSwimming } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
+
 const Home = () => {
   return (
     <>
@@ -34,7 +36,7 @@ const Home = () => {
         <h5>
           <em>
             Didn't see one you liked? Create your own
-            <a href="http://localhost:3000/Routines"> here</a>
+            <Link to="/Routines"> here</Link>
           </em>
         </h5>
         <h4>
