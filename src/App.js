@@ -21,6 +21,7 @@ const App = () => {
   const [routines, setRoutines] = useState([]);
   const [error, setError] = useState("");
   const [activites, setActivites] = useState([]);
+  const [myRoutine, setmyRoutine] = useState([]);
 
   const fetchRoutine = async () => {
     const routines = await fetch(`${url}/routines`, {
@@ -65,11 +66,30 @@ const App = () => {
     console.log("activities fetched");
   };
 
+  const fecthmyRoutine = async (e) => {
+    console.log("HIT");
+    const resp = await fetch(
+      `http://fitnesstrac-kr.herokuapp.com/api/users/${user.username}/routines`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    const info = await resp.json();
+    setmyRoutine(info);
+    console.log("MYROUTINE");
+  };
+
   useEffect(async () => {
     await fetchUser();
     await fetchRoutine();
     await fetchActivities();
   }, [token]);
+
+  useEffect(async () => {
+    if (user) await fecthmyRoutine();
+  }, [user]);
 
   return (
     <div id="container">
@@ -86,7 +106,15 @@ const App = () => {
 
           <Route
             exact
-            element={<MyRoutines user={user} token={token} />}
+            element={
+              <MyRoutines
+                user={user}
+                token={token}
+                routines={routines}
+                myRoutine={myRoutine}
+                fecthmyRoutine={fecthmyRoutine}
+              />
+            }
             path="/MyRoutines"
           />
 
@@ -154,8 +182,16 @@ const App = () => {
           />
           <Route
             exact
-            element={<UpdateRoutine user={user} routines={routines} />}
-            path="/UpdateRoutine"
+            element={
+              <UpdateRoutine
+                user={user}
+                myRoutine={myRoutine}
+                activities={activites}
+                token={token}
+                fecthmyRoutine={fecthmyRoutine}
+              />
+            }
+            path="/UpdateRoutine/:routineId"
           />
           <Route
             exact

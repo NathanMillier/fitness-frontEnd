@@ -16,17 +16,17 @@ const Routines = ({ token, user, routines }) => {
           if (routine.isPublic) {
             return (
               <div className="routinesCard" key={routine.id}>
-                <h1>{routine.name}:</h1>
+                <h2>{routine.name}:</h2>
                 <h4>Goal: {routine.goal}</h4>
-                <h4>Creator: {routine.creatorName}</h4>
+                <h5>Creator: {routine.creatorName}</h5>
                 <div>
                   {routine.activities.map((activity) => {
                     return (
-                      <>
+                      <div key={activity.id}>
                         <h1>Activity: {activity.name}</h1>
                         <h4>Duration: {activity.duration}</h4>
                         <h4>Count: {activity.count}</h4>
-                      </>
+                      </div>
                     );
                   })}
                 </div>
