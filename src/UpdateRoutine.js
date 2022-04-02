@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
-const UpdateRoutine = ({ myRoutine, activities, token }) => {
+const UpdateRoutine = ({ myRoutine, activities, token, fecthmyRoutine }) => {
   const params = useParams();
   const [routine, setRoutine] = useState({});
   const [name, setName] = useState("");
@@ -10,7 +10,7 @@ const UpdateRoutine = ({ myRoutine, activities, token }) => {
   const [activity, setActivity] = useState(0);
   const [duration, setDuration] = useState(0);
   const [count, setCount] = useState(0);
-  console.log(routine);
+  const history = useNavigate();
   const handleDelete = async (e) => {
     console.log("DELETEDs");
     await fetch(
@@ -23,6 +23,8 @@ const UpdateRoutine = ({ myRoutine, activities, token }) => {
         },
       }
     );
+    await fecthmyRoutine();
+    history("/MyRoutines");
   };
 
   const handleAddActivity = async (e) => {
@@ -41,6 +43,7 @@ const UpdateRoutine = ({ myRoutine, activities, token }) => {
         }),
       }
     );
+    await fecthmyRoutine();
   };
 
   const handleUpdateRoutine = async (e) => {
@@ -61,7 +64,8 @@ const UpdateRoutine = ({ myRoutine, activities, token }) => {
         }),
       }
     );
-    const info = await resp.json();
+
+    await fecthmyRoutine();
   };
 
   useEffect(async () => {
@@ -71,21 +75,23 @@ const UpdateRoutine = ({ myRoutine, activities, token }) => {
       })[0]
     );
   }, [myRoutine]);
-
+  console.log(routine);
   return (
     <>
       <h1>Update routine</h1>
       <h2>{routine.name}</h2>
       <h3>{routine.goal}</h3>
-      {/* {routine.activities.map((activity) => {
-        return (
-          <div key={activity.id}>
-            <h1>Activity: {activity.name}</h1>
-            <h4>Duration: {activity.duration}</h4>
-            <h4>Count: {activity.count}</h4>
-          </div>
-        );
-      })} */}
+      {routine.activities
+        ? routine.activities.map((activity) => {
+            return (
+              <div key={activity.id}>
+                <h1>Activity: {activity.name}</h1>
+                <h4>Duration: {activity.duration}</h4>
+                <h4>Count: {activity.count}</h4>
+              </div>
+            );
+          })
+        : null}
       <form id="myForm" onSubmit={handleUpdateRoutine}>
         <input
           placeholder="Change name"

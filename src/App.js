@@ -188,6 +188,7 @@ const App = () => {
                 myRoutine={myRoutine}
                 activities={activites}
                 token={token}
+                fecthmyRoutine={fecthmyRoutine}
               />
             }
             path="/UpdateRoutine/:routineId"

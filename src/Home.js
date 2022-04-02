@@ -3,16 +3,22 @@ import { faPersonRunning } from "@fortawesome/free-solid-svg-icons";
 import { faPersonBiking } from "@fortawesome/free-solid-svg-icons";
 import { faPersonSwimming } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import {
+//   faPersonBiking,
+//   faPersonRunning,
+//   faPersonSwimming,
+// } from "@fortawesome/free-solid-svg-icons";
 
-const Home = () => {
+const Home = ({ user }) => {
   return (
     <>
       <h2>Welcome to Your Custom Fitness Tracker Experience</h2>
       <h3>Your Journey to Fit</h3>
       <div className="icons">
-        <FontAwesomeIcon icon={faPersonRunning} />
-        <FontAwesomeIcon icon={faPersonBiking} />
         <FontAwesomeIcon icon={faPersonSwimming} />
+        <FontAwesomeIcon icon={faPersonBiking} />
+        <FontAwesomeIcon icon={faPersonRunning} />
       </div>
       <div className="steps">
         <h4>Step 1: If you are a new user, set up your account below</h4>

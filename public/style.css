@@ -122,6 +122,8 @@ h5 {
   z-index: 0;
   border-radius: 10px;
   margin-bottom: 10px;
+  font-size: 25px;
+  font-family: "Wire One";
 }
 
 .glow-on-hover:before {
@@ -191,6 +193,9 @@ h5 {
   }
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0009496918654fe656abfefd4ae17d1a25b4025e
 .icons {
   display: flex;
   flex-direction: row;
@@ -200,9 +205,13 @@ h5 {
   margin-bottom: 50px;
   font-size: 100px;
 }
+<<<<<<< HEAD
 =======
 
 >>>>>>> 39cf49e447433fbbc8c6d921222e6493d94da8a1
+=======
+
+>>>>>>> 0009496918654fe656abfefd4ae17d1a25b4025e
 footer {
   background-color: black;
 
@@ -214,4 +223,8 @@ footer {
   padding-top: 60px;
   padding-left: 15px;
   color: white;
+}
+.routinesCard {
+  border: 2px solid black;
+  margin-bottom: 10px;
 }
