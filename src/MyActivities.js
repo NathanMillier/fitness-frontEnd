@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const MyActivities = ({
   token,
@@ -7,10 +8,11 @@ const MyActivities = ({
   routines,
   error,
   setError,
+  fetchActivities,
 }) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  console.log(activities);
+  const history = useNavigate();
 
   const handleCreateActivity = async (e) => {
     e.preventDefault();
@@ -33,7 +35,10 @@ const MyActivities = ({
     const info = await resp.json();
     if (info.error) {
       setError(info.error);
+      return;
     }
+    await fetchActivities();
+    history("/Activities");
     console.log(info);
   };
 
@@ -55,7 +60,7 @@ const MyActivities = ({
           />
           <button type="submit">Submit Activity</button>
         </form>
-        <p>{error}, chose another name for you activity.</p>
+        <p>{error}</p>
       </div>
       {/* <div>
         <div className="myActivitiesHeader">My Activities</div>

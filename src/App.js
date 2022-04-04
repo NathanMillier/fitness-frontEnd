@@ -123,9 +123,11 @@ const App = () => {
             element={
               <Activities
                 user={user}
-                activities={activites}
+                activites={activites}
                 routines={routines}
                 url={url}
+                token={token}
+                fetchActivities={fetchActivities}
               />
             }
             path="/Activities"
@@ -140,6 +142,7 @@ const App = () => {
                 routines={routines}
                 error={error}
                 setError={setError}
+                fetchActivities={fetchActivities}
               />
             }
             path="/MyActivities"

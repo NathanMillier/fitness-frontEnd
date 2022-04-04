@@ -1,7 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import ActivityForm from "./ActivityForm";
 
-const Activities = ({ routines, user, activities }) => {
+const Activities = ({
+  routines,
+  user,
+  activites,
+  url,
+  token,
+  fetchActivities,
+}) => {
+  const { activityId } = useParams();
+  const activity = activites.find((activite) => activityId === activite.id);
+
   return (
     <>
       <div className="activitiesHeader">
@@ -15,16 +26,16 @@ const Activities = ({ routines, user, activities }) => {
         )}
       </div>
       <div>
-        {activities
-          ? activities.map((activitie) => {
+        {activites
+          ? activites.map((activitie) => {
               return (
-                <div className="activitiesCard" key={activitie.id}>
-                  {/* <h1>hi {user.name}</h1> */}
-                  <Link to={`/Activities/${activitie.id}/routines`}>
-                    <h1>{activitie.name}:</h1>
-                    <h3>Description: {activitie.description}</h3>
-                  </Link>
-                </div>
+                <ActivityForm
+                  activitie={activitie}
+                  user={user}
+                  url={url}
+                  token={token}
+                  fetchActivities={fetchActivities}
+                />
               );
             })
           : null}

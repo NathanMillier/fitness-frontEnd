@@ -30,9 +30,9 @@ const ActivityDetails = ({ activites, user, url }) => {
           <h3>{activity.description}</h3>
 
           {activityRoutines
-            ? activityRoutines.map((activityRoutine, idx) => {
+            ? activityRoutines.map((activityRoutine) => {
                 return (
-                  <div key={idx}>
+                  <div key={activityRoutine.id}>
                     <h3>{activityRoutine.name}</h3>;
                   </div>
                 );
